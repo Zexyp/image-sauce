@@ -195,7 +195,7 @@ def DrawImage(image):
 
 tmp_folder="tmp/"
 
-debug = True
+debug = False
 safemode = False
 
 site = "https://www.bing.com"
