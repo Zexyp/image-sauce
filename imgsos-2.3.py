@@ -118,33 +118,6 @@ def GetAllImageLinksFromHTML(html, suffix, safe, debug):
         
         return array
 
-def Reee(html, suffix = ".png"):
-    print(" -- --------------------------------------------------- -- ")
-    start = 0
-    end = 0
-    oldstart = 0
-    
-    array = []
-
-    i = 0
-    active = True
-    while (active):
-        oldstart = start
-        end = html[start:].find(suffix)
-        start = html.rfind("\"http", oldstart, end)
-        garbage = html.rfind("url(/", oldstart, end)
-        if (start > garbage):
-            print(html[start + 1 : end + len(suffix)])
-        else:
-            print("nope")
-        print(start, end, garbage)
-
-        i += 1
-        if (i == 2):
-            active = False
-    print(" -- --------------------------------------------------- -- ")
-    
-
 def DownloadImage(url, folder, filename):
     image_response = requests.get(image_url, stream = True)
     
@@ -223,7 +196,6 @@ while (True):
                 response_file.write(response.text)
 
         image_urls = GetAllImageLinksFromHTML(response.text, image_type, safemode, False)
-        Reee(response.text)
 
     #image_url = GetImageLinkFromHTML(response.text, ".jpg", html_image_offset)
     
