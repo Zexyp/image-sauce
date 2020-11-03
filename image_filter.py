@@ -109,14 +109,14 @@ class Filter:
                         self.face_index = int (command_array[2]) - 1
                     else:
                         PrintList(self.faces)
-                        if (self.faces_index > -1):
+                        if (self.face_index > -1):
                             print("current:", self.faces[self.face_index])
                 if (command_array[1] == "age"):
                     if (len(command_array) == 3):
-                        self.age = int (command_array[2])
+                        self.age_custom = int (command_array[2])
                     else:
-                        if (self.age > -1):
-                            print("current:", self.age)
+                        if (self.age_custom > -1):
+                            print("current:", self.age_custom)
 
                 if (command_array[1] == "clear"):
                     self.UnsetAll();
